@@ -30,6 +30,6 @@ app.post("/register", register.handleRegister(db, bcrypt));
 app.get("/profile/:id", profile.handleProfileGet(db));
 app.put("/image", image.handleImage(db));
 app.post("/imageurl", image.handleApiCall());
-app.listen(3000, () => {
-  console.log("APP IS RUNNING ON PORT 3000");
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`APP IS RUNNING ON PORT ${process.env.PORT}`);
 });
